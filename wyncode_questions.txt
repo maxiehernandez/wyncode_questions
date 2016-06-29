@@ -1,0 +1,39 @@
+#Instructions: Define a class, Quadrilateral. Now, model this concept in Ruby using classes and inheritance:
+# A rectangle, square, rhombus, and trapezoid are all types of quadrilaterals.
+# A square is a type of rectangle.
+# A rhombus is a type of trapezoid.
+
+#Response:
+class Quadrilateral
+end
+
+
+class Trapezoid < Quadrilateral
+end
+
+
+class Rectangle < Quadrilateral
+end
+
+
+class Rhombus < Trapezoid
+end
+
+
+
+class Square < Rectangle
+end
+
+
+
+def test
+  squa = Square.new
+  puts squa.is_a? Rectangle
+  puts squa.is_a? Quadrilateral
+
+  rect = Rectangle.new
+  puts rect.is_a? Quadrilateral
+  puts not(rect.is_a? Trapezoid)
+end
+
+test
